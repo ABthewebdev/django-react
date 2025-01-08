@@ -4,7 +4,6 @@ import api from "../api";
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { FC, ReactNode, useEffect, useState } from "react";
 
-// Step 13 Setting our route that is only accessible to users
 interface ProtectedRouteProps {
   children: ReactNode;
 }
@@ -19,6 +18,7 @@ interface RefreshTokenResponse {
   [key: string]: any; // For other possible response data
 }
 
+// Step 13 Setting our route that is only accessible to users logged in
 export const ProtectedRoute: FC<ProtectedRouteProps> = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
 
