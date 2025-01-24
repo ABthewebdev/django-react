@@ -1,5 +1,5 @@
 import { jwtDecode } from "jwt-decode";
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router";
 import api from "../api";
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { FC, ReactNode, useEffect, useState } from "react";

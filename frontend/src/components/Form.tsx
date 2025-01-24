@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import api from "../api";
-import { data, useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css";
 
@@ -26,7 +26,8 @@ export default function Form({ route, method }: FormProps) {
       if (method === "login") {
         localStorage.setItem(ACCESS_TOKEN, res.data.access);
         localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-        console.log(username, password);
+        console.log(REFRESH_TOKEN);
+        console.log(ACCESS_TOKEN);
         navigate("/");
       } else {
         navigate("/login");
